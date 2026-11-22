@@ -1,0 +1,247 @@
+import { useEffect } from 'react';
+import './App.css'
+import { IconCarousel } from './Carrousel/Carrousel'
+import { animate, motion, useMotionValue, useScroll, useTransform } from "motion/react"
+import { Linkedin, Whatsapp, Youtube, Instagram} from './icons';
+import report1 from './assets/report1.png';
+import report2 from './assets/report2.png';
+import report5 from './assets/report5.png';
+import report6 from './assets/report6.png';
+import report9 from './assets/report9.png';
+import report8 from './assets/report8.png';
+import perfil from './assets/perfil.png';
+import niwan from './assets/Niwan.jpeg';
+import marcos from './assets/marcos.png';
+import claudio from './assets/Cláudio.jpeg';
+import alex from './assets/Alex.jpeg';
+import valkiria from './assets/valkiria.jpeg'; 
+import mariane from './assets/mariane.jpeg';
+import { Timeline } from './Timeline/Timeline';
+
+function App() {
+  const { scrollYProgress } = useScroll();
+  const countItau = useMotionValue(0);
+  const approvalItau = useTransform(countItau, Math.round);
+  const countApproval = useMotionValue(0);
+  const approval = useTransform(countApproval, Math.round);
+  const countCV = useMotionValue(0);
+  const cv = useTransform(countCV, Math.round);
+
+  useEffect(() => {
+      const controls = animate(countItau, 34, { duration: 1 });
+      return () => controls.stop();
+  }, [countItau])
+  useEffect(() => {
+      const controls = animate(countApproval, 280, { duration: 2 });
+      return () => controls.stop();
+  }, [countApproval])
+  useEffect(() => {
+      const controls = animate(countCV, 400, { duration: 2.5 });
+      return () => controls.stop();
+  }, [countCV])
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Giulianna Fachinelli",
+      body: "\"Conheci o Joseph em um momento importante de transição de carreira, e seu apoio foi fundamental. Ele fez uma análise completa do meu currículo e compartilhou dicas valiosas. É um profissional dedicado, com um olhar analítico e humano, que recomendo sem dúvidas.\"",
+      linkedin: "https://www.linkedin.com/in/giuliannafachinelli/",
+      img: report6
+    },
+    {
+      id: 2,
+      name: "Vitor Hugo Santana de Oliveira",
+      body: "\"Graças aos feedbacks certeiros, paciência e olhar estratégico do Joseph, consegui melhorar significativamente meu currículo, o que foi fundamental para conquistar uma vaga como estagiário na área de Produtos no Itaú. Recomendo de olhos fechados para quem busca uma orientação que faz diferença na prática.\"",
+      linkedin: "https://www.linkedin.com/in/vitorhsant/",
+      img: report5
+    },
+    {
+      id: 3,
+      name: "João Pedro Peixoto",
+      body: "\"Tive a oportunidade de contar com o apoio do José na construção do meu currículo e fiquei extremamente satisfeito com o resultado. Sua abordagem estratégica tornou o documento mais atrativo e alinhado às exigências do mercado.\"",
+      linkedin: "https://www.linkedin.com/in/jo%C3%A3o-pedro-peixoto-a8b802266/",
+      img: report9
+    },
+    {
+      id: 4,
+      name: "Mariane Alves Tenório",
+      body: "\"Quero agradecer ao Joseph por toda a ajuda na reformulação do meu currículo e do meu perfil no Gupy. Todas as modificações foram importantes para que eu fosse notada pelos recrutadores. Além disso, as dicas que ele me deu sobre entrevistas foram essenciais, graças a isso, consegui me destacar e fui aprovada no Itaú.\"",
+      linkedin: "https://www.linkedin.com/in/mariane-alves-tenorio/",
+      img: report2
+    },
+    {
+      id: 5,
+      name: "Dhyogennes Quintino",
+      body: "\"Tive a oportunidade de ter contato com o trabalho do Joseph Santos, ele é um excelente profissional, demonstra um elevado conhecimento técnico, é uma pessoa que se comunica bem, é muito paciente e entrega valor. Solicitei análise e ajuste de meu Linkedin, Gupy e currículo, e em menos de um mês consegui um retorno devido ao trabalho realizado por ele.\"",
+      linkedin: "https://www.linkedin.com/in/dhyogennes-quintino-b2459b3a8/",
+      img: report1
+    },
+    {
+      id: 6,
+      name: "Alexia Alberiz",
+      body: "\"Recebi as orientações do Joseph e isso foi decisivo no meu processo. Ele me guiou com clareza e ainda reformulou meu currículo. Me motivou a perseguir as oportunidades certas e acreditou, desde o início, que eu poderia sim ser aprovada no Santander com a estratégia correta. E deu certo: hoje iniciei no Santander.\"",
+      linkedin: "https://www.linkedin.com/in/alexia-alberiz",
+      img: report8
+    },
+    {
+      id: 10,
+      name: "Alex Gabriel Ramos",
+      body: "\"Quero recomendar o Joseph pelo ótimo trabalho em criar e melhorar currículos. Ele consegue deixar qualquer CV mais claro, profissional e com a cara do mercado. Explica tudo de um jeito simples, faz ajustes certeiros e realmente ajuda a destacar o que tem de melhor.\"",
+      linkedin: "https://www.linkedin.com/in/alex-gabriel-ramos/?skipRedirect=true",
+      img: alex
+    },
+    {
+      id: 12,
+      name: "Mariane Alves Tenório",
+      body: "\"Quero agradecer ao Joseph por toda a ajuda na reformulação do meu currículo e do meu perfil no Gupy, todas as modificações foram importantes para que eu fosse notada pelos recrutadores. Além disso, as dicas que ele me deu sobre entrevistas foram essenciais, graças a isso, consegui me destacar e fui aprovada no Itaú\"",
+      linkedin: "https://www.linkedin.com/in/mariane-alves-tenorio/",
+      img: mariane
+    },
+    {
+      id: 9,
+      name: "Cláudio Damião de Oliveira Freitas",
+      body: "\"Contratar a mentoria do Joseph foi, sem dúvida, uma das melhores decisões que tomei e faço questão de reconhecer isso aqui. Ao longo do processo, ele me ofereceu orientações claras e didáticas sobre currículo, Gupy e posicionamento profissional aqui no LinkedIn. Após um longo período sem me dedicar às buscas por uma nova oportunidade, confesso que retomar esse movimento foi bem difícil. O apoio do Joseph foi essencial. Tivemos quatro encontros focados exclusivamente em posicionamento profissional, que foram verdadeiras AULAS. Em menos de duas semanas, passei a ser abordado por recrutadores aqui no LinkedIn e, como resultado, conquistei minha recolocação no Banco Safra, um resultado que superou totalmente minhas expectativas. Deixo aqui meu sincero reconhecimento e agradecimento pelo seu profissionalismo e dedicação. Recomendo a todos o trabalho do Joseph para quem busca resultados.\"",
+      linkedin: "https://www.linkedin.com/in/cl%C3%A1udio-dami%C3%A3o-de-oliveira-freitas/",
+      img: claudio
+    },
+    {
+      id: 7,
+      name: "M. Felipe",
+      body: "\"Tive a oportunidade de contar com o suporte do Joseph e posso afirmar o quanto seu trabalho é diferenciado. Ele foi extremamente atencioso, prestativo e estratégico em todo o processo de preparação para o meu estágio. Contribuiu de forma decisiva na organização e melhoria do meu currículo, no fortalecimento do meu perfil profissional e me orientou com clareza sobre como me posicionar nas entrevistas. Seu suporte fez toda a diferença na minha confiança e desempenho, sendo fundamental para que eu conquistasse meu estágio. Profissional competente, comprometido e genuinamente interessado no resultado de quem ele ajuda.\"",
+      linkedin: "https://www.linkedin.com/in/mfelipess/",
+      img: marcos
+    },
+    {
+      id: 11,
+      name: "Valkiria Oliveira",
+      body: "\"Conhecimento excepcional!Além de toda a atenção e ajuda no processo de montagem de currículo, seu conhecimento sobre processos seletivos realmente impressiona. Tendemos a achar que um processo seletivo é apenas sobre os certificados e currículos que possuímos, mas é muito mais sobre a forma como nos apresentamos e como a nossa imagem chegará ao recrutador. Sou muito grata ao Joseph, pois eu me enquadrava na primeira categoria de pensamento e depois dele me ajudar, tive uma virada de chave e entendi como realmente a engrenagem do recrutamento funciona! Obrigada! Não hesite em contar com o serviço do Joseph! 🚀.\"",
+      linkedin: "https://www.linkedin.com/in/valkiria-jesus-8326791a2/",
+      img: valkiria
+    },
+    {
+      id: 8,
+      name: "Niwan Batista",
+      body: "\"Tive a oportunidade de conhecer e trabalhar com o Joseph no Itaú, e desde o início algo que me chamou muita atenção foi a força de vontade dele em correr atrás dos objetivos. O Joseph é extremamente dedicado, esforçado e determinado. Se for preciso tentar várias vezes até alcançar o que quer, ele tenta quantas vezes forem necessárias. Essa coragem de continuar, mesmo diante das dificuldades, é algo que admiro muito e que, na minha visão, diferencia grandes profissionais. Agradeço por ter tido a oportunidade de trabalhar com o Joseph e desejo muito sucesso a ele!\"",
+      linkedin: "https://www.linkedin.com/in/niwanbatista/",
+      img: niwan
+    }
+  ]
+
+  return (
+    <>
+      <div className="blob blob-1"></div>
+      <div className="blob blob-2"></div>
+      <main>
+        <motion.div
+            id="scroll-indicator"
+            style={{
+                scaleX: scrollYProgress,
+                position: "fixed",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 3,
+                originX: 0,
+                background: "linear-gradient(135deg, var(--green-dark) 0%, var(--green-neon) 50%, var(--green) 100%)",
+            }}
+          />
+        <div className='page landing-page'>
+          <section className='about'>
+              <div className='social'>
+                <a                
+                  href="https://youtube.com/@joseph-perfilaprovado?si=hNC6llQs4eg_o3o8" 
+                  target="_blank" 
+                  rel="noopener noreferrer">
+                  <Youtube />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/josephsantoss/" 
+                  target="_blank" 
+                  rel="noopener noreferrer">
+                  <Linkedin />
+                </a>
+                <a 
+                  href="https://api.whatsapp.com/send/?phone=5511963991859&text&type=phone_number&app_absent=0/" 
+                  target="_blank" 
+                  rel="noopener noreferrer">
+                  <Whatsapp />
+                </a>
+                <a
+                  href="https://www.instagram.com/joseph_perfil_aprovado/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <Instagram />
+                </a>
+              </div>
+              <div className='perfil'>
+                <h3 className='perfil-marketing'>+5 Anos<br></br>de RH</h3>
+                <img className="perfil-photo" src={perfil} alt="perfil" />
+                <h3 className='perfil-name'>Joseph Santos</h3>
+              </div>
+          </section>
+          <section className='marketing'>
+            <motion.div className='marketing-slogans'>
+              <h2><motion.span>{approvalItau}</motion.span> Aprovações no <span className='itau'>Itaú</span></h2>
+              <h2>+<motion.span>{approval}</motion.span> Aprovações</h2>
+              <h2>+<motion.span>{cv}</motion.span> Currículos</h2>
+            </motion.div>
+            <div className='actions'>
+              <a className='linkedin glow-on-hover'
+                href="https://www.linkedin.com/in/josephsantoss/details/recommendations/" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                  Experiências de Clientes
+              </a>
+              <a className='save'
+                href="https://api.whatsapp.com/send/?phone=5511963991859&text&type=phone_number&app_absent=0/" 
+                target="_blank" 
+                rel="noopener noreferrer">Faça seu pedido</a>
+            </div>
+          </section>
+        </div>
+        <IconCarousel />
+        <div className='page service-page'>
+            <h2>Conheça nossos serviços</h2>
+            <Timeline />
+        </div>
+        <div className='page grid-page'>
+          <h2>Histórias de Sucesso!</h2>
+          <div className='grid-container'>
+            {testimonials.map((t) => (
+              <div className={`box box-${t.id}`} key={`box-${t.id}`}>
+                {t.img && <img src={t.img} alt={t.name} className='image-clients'/>}
+                <div className='name'>
+                  <h3>{t.name}</h3>
+                  <a 
+                    href={t.linkedin}
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    <Linkedin />
+                  </a>
+                </div>
+                <div className='body'>
+                  {t.body}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+         <footer className='footer-cta'>
+          <div className='footer-cta__content'>
+            <p>Vamos transformar seu currículo e sua presença profissional?</p>
+            <a
+              className='footer-cta__button'
+              href="https://api.whatsapp.com/send/?phone=5511963991859&text&type=phone_number&app_absent=0/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Envie-me uma mensagem
+            </a>
+          </div>
+        </footer>
+      </main>
+    </>
+  )
+}
+
+export default App

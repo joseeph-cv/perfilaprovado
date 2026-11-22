@@ -228,14 +228,24 @@ function App() {
         </div>
          <footer className='footer-cta'>
           <div className='footer-cta__content'>
-            <p>Vamos transformar seu currículo e sua presença profissional?</p>
+            <div className='footer-cta__text'>
+              <span className='footer-cta__eyebrow'>Mentoria Currículo + LinkedIn</span>
+              <h2>Pronto para ser <span>chamado para entrevistas</span>?</h2>
+              <p>Me conta a sua área e a vaga que você quer. Eu te mostro o que mudar no seu currículo e no seu LinkedIn.</p>
+              <ul className='footer-cta__proof'>
+                <li>+280 aprovações</li>
+                <li>+400 currículos</li>
+                <li>Atendimento individual</li>
+              </ul>
+            </div>
             <a
               className='footer-cta__button'
-              href="https://api.whatsapp.com/send/?phone=5511963991859&text&type=phone_number&app_absent=0/"
+              href="https://wa.me/5511963991859?text=Oi%20Joseph!%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20a%20mentoria%20de%20curr%C3%ADculo%20%2B%20LinkedIn."
               target="_blank"
               rel="noopener noreferrer"
             >
-              Envie-me uma mensagem
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.55 2 2.1 6.45 2.1 11.94c0 1.75.46 3.46 1.33 4.97L2 22l5.22-1.37a9.9 9.9 0 0 0 4.82 1.23h.01c5.49 0 9.94-4.45 9.94-9.94A9.9 9.9 0 0 0 12.04 2zm0 18.16h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.55 3.7-8.25 8.25-8.25a8.25 8.25 0 0 1 8.24 8.25c0 4.55-3.7 8.22-8.26 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+              Falar no WhatsApp
             </a>
           </div>
         </footer>

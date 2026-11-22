@@ -167,7 +167,7 @@ function App() {
                   <Whatsapp />
                 </a>
                 <a
-                  href="https://www.instagram.com/joseph_perfil_aprovado/"
+                  href="https://www.instagram.com/joseph_saantos/"
                   target="_blank"
                   rel="noopener noreferrer">
                   <Instagram />
